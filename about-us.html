@@ -15,19 +15,28 @@
         padding: 0px 20px;
         margin: 0% auto;
       }
+      html,
+      body {
+        scroll-behavior: smooth;
+      }
       #header {
         width: 100%;
         height: 800px;
         background-color: aqua;
       }
       .navbar {
-        width: 100%;
-        height: 70px;
         background-color: brown;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0px 15px;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        transition: 0.5s;
+        height: 70px;
+        box-shadow: 0px 0px 2px 4px rgba(0, 0, 0, 0.4);
       }
       .navbar h1 {
         color: yellow;
@@ -39,26 +48,29 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
+        /* background-color: brown; */
+
+        transition: 0.5s;
       }
       ul li {
-        /* padding: 10px; */
         cursor: pointer;
-        /* height: 100%;
-        width: 100%; */
       }
       ul li a {
-        color: burlywood;
+        color: dodgerblue;
         padding: 10px;
         border: 0px;
         width: 100%;
         height: 100%;
         text-decoration: none;
+        opacity: 0.6;
+        display: block;
+        background-color: wheat;
       }
       .section-header {
         display: flex;
         justify-content: center;
-        margin: 20px;
         align-items: center;
+        padding: 100px 0px;
       }
 
       .image1 {
@@ -77,20 +89,55 @@
         border-radius: 50px;
       }
 
-      section {
+      .section-in-heaeder {
         width: 700px;
         height: 400px;
         background-color: yellowgreen;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
         padding: 0px 10px;
-        gap: 10px;
+        gap: 40px 0px;
       }
-      section p {
+      .p-section-header {
         font-size: 1.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
+      .section-main {
+        width: 100%;
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+      }
+      #about-us {
+        background-color: deeppink;
+      }
+      #home {
+        background-color: saddlebrown;
+      }
+      #contact-us {
+        background-color: sandybrown;
+      }
+      #product {
+        background-color: seagreen;
+      }
+      .after-scroll-ul {
+        height: 60px;
+        background-color: burlywood;
+      }
+      .after-scroll-ul a {
+        color: brown;
+      }
+      .opacity {
+        opacity: 1;
+      }
+
       @media (max-width: 720px) {
         .section-header {
           flex-wrap: wrap;
@@ -108,22 +155,24 @@
           <h1>ZARFOOD</h1>
           <ul>
             <li>
-              <a href="#"> about us</a>
+              <a data-item="home">home</a>
             </li>
             <li>
-              <a href="#"> contact us</a>
+              <a data-item="contact-us">contact us</a>
             </li>
             <li>
-              <a href="#"> product</a>
+              <a data-item="product">product</a>
             </li>
             <li>
-              <a href="#"> more..</a>
+              <a data-item="about-us">about us</a>
             </li>
           </ul>
         </nav>
-        <div class="section-header">
-          <section>
-            <h2>this is about us</h2>
+      </div>
+      <div class="section-header">
+        <section class="section-in-heaeder">
+          <h2>this is about us</h2>
+          <div class="p-section-header">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
               praesentium recusandae debitis, porro veniam quia eveniet numquam,
@@ -142,9 +191,15 @@
               ullam nam nostrum sit quibusdam maxime adipisci repellat ut natus
               corrupti! At, obcaecati!
             </p>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </header>
+    <section class="section-main" id="home">HOME</section>
+    <section class="section-main" id="contact-us">CONTACT US</section>
+    <section class="section-main" id="product">PRODUCT</section>
+    <section class="section-main" id="about-us">ABOUT US</section>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>
