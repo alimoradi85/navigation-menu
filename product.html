@@ -48,7 +48,6 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
-        /* background-color: brown; */
 
         transition: 0.5s;
       }
@@ -203,6 +202,7 @@
     <script>
       const sections = [...document.querySelectorAll(".section-main")];
       const links = [...document.querySelectorAll(".navbar a")];
+      const navBar = document.querySelector(".navbar");
       links.forEach((link) => {
         link.addEventListener("click", function () {
           const datasetlink = link.dataset.item;
@@ -211,7 +211,12 @@
         });
       });
       window.addEventListener("scroll", function () {
-        const scrollTop = scrollY;
+        const scrollTop = this.scrollY;
+        if (scrollTop > 250) {
+          navBar.classList.add("after-scroll-ul");
+        } else {
+          navBar.classList.remove("after-scroll-ul");
+        }
         sections.forEach((section) => {
           lightItem(scrollTop, section);
         });
