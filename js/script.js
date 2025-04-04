@@ -35,7 +35,6 @@ document.addEventListener("scroll", function () {
 const lightItem = (scrollTop, section) => {
   const sectionTop = section.offsetTop;
   const sectionTopAndHeight = section.clientHeight + section.offsetTop;
-
   const sectionId = section.id;
   if (scrollTop >= sectionTop) {
     links.forEach((link) => {
